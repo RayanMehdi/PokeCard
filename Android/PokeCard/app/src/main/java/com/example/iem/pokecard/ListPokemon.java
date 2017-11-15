@@ -1,8 +1,11 @@
 package com.example.iem.pokecard;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,6 +34,14 @@ public class ListPokemon extends AppCompatActivity {
         Async recupPoke = new Async();
         recupPoke.execute(PokeList, adapter);
 
+        PokemonList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(ListPokemon.this, DetailPokemon.class);
+                        intent.putExtra("Pokemon", PokeList.get(i));
+                        startActivity(intent);
+                    }
+                });
 
-    }
-}
+            }
+        }

@@ -2,6 +2,7 @@ package com.example.iem.pokecard.Model;
 
 import android.media.Image;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  * Created by iem on 10/11/2017.
  */
 
-public class Pokemon {
+public class Pokemon implements Serializable {
 
     //Attributes
 
