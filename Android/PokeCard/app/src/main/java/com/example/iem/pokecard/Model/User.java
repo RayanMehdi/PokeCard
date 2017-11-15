@@ -10,9 +10,9 @@ public class User {
 
 
     int id;
-    String nom, prenom, mail,
+    String nom, prenom, mail;
     String idFacebook;
     ArrayList<Pokemon> pokemonList;
     ArrayList<Pokemon> myTeam;
-    
+
 }
