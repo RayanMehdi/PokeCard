@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.iem.pokecard.DetailPokemon">
+    tools:context="com.example.iem.pokecard.DetailPokemon"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
         android:id="@+id/imageViewPokemon"
         android:layout_width="0dp"
         android:layout_height="86dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="31dp"
         app:layout_constraintEnd_toStartOf="@+id/textViewNom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,110 +21,139 @@
 
     <TextView
         android:id="@+id/textViewNom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
-        android:layout_marginEnd="192dp"
+        android:layout_width="109dp"
+        android:layout_height="18dp"
+
+        android:layout_marginBottom="88dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginTop="88dp"
         android:text="Nom"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewPokemon"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewStats"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewPokemon" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginBottom="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="58dp"
         android:text="Statistiques :"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="177dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAttSpe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPokemon" />
 
     <TextView
         android:id="@+id/textViewPV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
         android:text="PV :"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="245dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewPvRecup"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewAtt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
         android:text="Att :"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="316dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewAttRecup"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewDef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
         android:text="Def :"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="381dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewDefRecup"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewPvRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="245dp" />
+
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewStats"
+        app:layout_constraintStart_toEndOf="@+id/textViewStats"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStats" />
 
     <TextView
         android:id="@+id/textViewAttRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="316dp" />
+
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDefSpe"
+        app:layout_constraintStart_toStartOf="@+id/textViewPvRecup"
+        app:layout_constraintTop_toTopOf="@+id/textViewDefSpe" />
 
     <TextView
         android:id="@+id/textViewDefRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="381dp" />
+
+        android:layout_marginTop="46dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewAttRecup"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAttRecup" />
 
     <TextView
         android:id="@+id/textViewAttSpe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:text="spA :"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="245dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewDefSpe"
+        app:layout_constraintEnd_toEndOf="@+id/textViewDefSpe"
+        app:layout_constraintStart_toStartOf="@+id/textViewDefSpe" />
 
     <TextView
         android:id="@+id/textViewDefSpe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="46dp"
         android:text="spD :"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="316dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewVitesse"
+        app:layout_constraintStart_toStartOf="@+id/textViewVitesse" />
 
     <TextView
         android:id="@+id/textViewVitesse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginBottom="126dp"
+        android:layout_marginEnd="22dp"
         android:text="Vitesse :"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="381dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewVitRecup" />
 
     <TextView
         android:id="@+id/textViewAttSpeRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="289dp"
-        tools:layout_editor_absoluteY="245dp" />
+
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewAttSpe"
+        app:layout_constraintEnd_toEndOf="@+id/textViewDefSpeRecup"
+        app:layout_constraintStart_toStartOf="@+id/textViewDefSpeRecup" />
 
     <TextView
         android:id="@+id/textViewDefSpeRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="289dp"
-        tools:layout_editor_absoluteY="316dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewDefSpe"
+        app:layout_constraintStart_toStartOf="@+id/textViewVitRecup" />
 
     <TextView
         android:id="@+id/textViewVitRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="289dp"
-        tools:layout_editor_absoluteY="381dp" />
+        android:layout_marginEnd="96dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewVitesse"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

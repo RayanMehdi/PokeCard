@@ -26,12 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonList = (Button)findViewById(R.id.buttonListPokemon);
         Button buttonDetails = (Button)findViewById(R.id.buttonDetail);
 
-      /* button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //new Async().execute(tv,“http://pokecardapi.local/index.php/pokemon/list“);
-            }
-        });*/
+
 
 
         buttonList.setOnClickListener(new View.OnClickListener() {
