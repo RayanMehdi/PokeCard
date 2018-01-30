@@ -10,10 +10,12 @@
     <ImageView
         android:id="@+id/imageViewPokemon"
         android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="31dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewStats"
         app:layout_constraintEnd_toStartOf="@+id/textViewNom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,47 +23,50 @@
 
     <TextView
         android:id="@+id/textViewNom"
-        android:layout_width="109dp"
-        android:layout_height="18dp"
-
-        android:layout_marginBottom="88dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="37dp"
         android:text="Nom"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewStats"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewPokemon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/imageViewPokemon"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPokemon" />
 
     <TextView
         android:id="@+id/textViewStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_marginBottom="57dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="187dp"
         android:text="Statistiques :"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewAttSpe"
+        android:textAllCaps="true"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewPokemon" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <TextView
         android:id="@+id/textViewPV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="16dp"
+        android:layout_marginTop="41dp"
         android:text="PV :"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewPvRecup"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStats" />
 
     <TextView
         android:id="@+id/textViewAtt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="16dp"
         android:text="Att :"
+        android:textAllCaps="true"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewAttRecup"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -69,91 +74,93 @@
         android:id="@+id/textViewDef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="16dp"
         android:text="Def :"
+        android:textAllCaps="true"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewDefRecup"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewDefRecup" />
 
     <TextView
         android:id="@+id/textViewPvRecup"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="@+id/textViewStats"
-        app:layout_constraintStart_toEndOf="@+id/textViewStats"
-        app:layout_constraintTop_toBottomOf="@+id/textViewStats" />
+        android:layout_height="23dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewPV"
+        app:layout_constraintStart_toEndOf="@+id/textViewPV" />
 
     <TextView
         android:id="@+id/textViewAttRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        app:layout_constraintBottom_toBottomOf="@+id/textViewDefSpe"
-        app:layout_constraintStart_toStartOf="@+id/textViewPvRecup"
-        app:layout_constraintTop_toTopOf="@+id/textViewDefSpe" />
+        android:layout_marginTop="46dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewAtt"
+        app:layout_constraintStart_toEndOf="@+id/textViewAtt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPvRecup" />
 
     <TextView
         android:id="@+id/textViewDefRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="46dp"
-        app:layout_constraintStart_toStartOf="@+id/textViewAttRecup"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAttRecup" />
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewAtt"
+        app:layout_constraintStart_toEndOf="@+id/textViewAtt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAtt" />
 
     <TextView
         android:id="@+id/textViewAttSpe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="47dp"
+        android:layout_marginEnd="7dp"
         android:text="spA :"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toTopOf="@+id/textViewDefSpe"
-        app:layout_constraintEnd_toEndOf="@+id/textViewDefSpe"
-        app:layout_constraintStart_toStartOf="@+id/textViewDefSpe" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewAttSpeRecup" />
 
     <TextView
         android:id="@+id/textViewDefSpe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="46dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="7dp"
         android:text="spD :"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toTopOf="@+id/textViewVitesse"
-        app:layout_constraintStart_toStartOf="@+id/textViewVitesse" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewDefSpeRecup" />
 
     <TextView
         android:id="@+id/textViewVitesse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_marginBottom="126dp"
-        android:layout_marginEnd="22dp"
+        android:layout_marginEnd="5dp"
         android:text="Vitesse :"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewVitRecup" />
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDefRecup"
+        app:layout_constraintEnd_toStartOf="@+id/textViewVitRecup"
+        app:layout_constraintTop_toTopOf="@+id/textViewDefRecup" />
 
     <TextView
         android:id="@+id/textViewAttSpeRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewAttSpe"
-        app:layout_constraintEnd_toEndOf="@+id/textViewDefSpeRecup"
-        app:layout_constraintStart_toStartOf="@+id/textViewDefSpeRecup" />
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAttSpe"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDefSpeRecup"
+        app:layout_constraintStart_toStartOf="@+id/textViewDefSpeRecup"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAttSpe" />
 
     <TextView
         android:id="@+id/textViewDefSpeRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewDefSpe"
-        app:layout_constraintStart_toStartOf="@+id/textViewVitRecup" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewVitesse" />
 
     <TextView
         android:id="@+id/textViewVitRecup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="96dp"
+        android:layout_marginEnd="105dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewVitesse"
         app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>
