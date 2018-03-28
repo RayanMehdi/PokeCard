@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.iem.pokecard.Manager.Manager_WS;
 import com.example.iem.pokecard.Model.Pokemon;
 
 import java.util.ArrayList;
@@ -30,8 +31,8 @@ public class ListPokemon extends AppCompatActivity {
         adapter = new MyAdapter(ListPokemon.this, PokeList);
         PokemonList.setAdapter(adapter);
 
-        Async recupPoke = new Async();
-        recupPoke.execute(PokeList, adapter);
+        Manager_WS ws = new Manager_WS(PokeList, adapter);
+        ws.getList();
 
         PokemonList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
