@@ -23,11 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
+
+=======
         Button button = (Button) findViewById(R.id.button);
         final TextView tv = (TextView) findViewById(R.id.textView);
         Button buttonList = (Button) findViewById(R.id.buttonListPokemon);
         Button buttonLogin = (Button) findViewById(R.id.buttonLogin);
         Button buttonSetting = (Button) findViewById(R.id.buttonSettings);
+>>>>>>> 4db8218e07f7c3dd4868900d69a896fb83e81604
 
 
         buttonList.setOnClickListener(new View.OnClickListener() {
@@ -49,8 +53,12 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
+               /// new Async().execute(tv,"http://pokecardapi.local/index.php/pokemon/list");
+=======
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
+>>>>>>> 4db8218e07f7c3dd4868900d69a896fb83e81604
             }
         });
 

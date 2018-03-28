@@ -38,6 +38,11 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+<<<<<<< HEAD
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+=======
     compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
 
+>>>>>>> 4db8218e07f7c3dd4868900d69a896fb83e81604
 }
