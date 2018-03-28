@@ -16,7 +16,8 @@ public class Pokemon implements Serializable {
 
     String icon;
     String name;
-    int pv, att, def, spA, spD, spe;
+
+    int pv, att, def, spA, spD, spe, idPoke;
 
     public String getIcon() {
         return icon;
@@ -48,6 +49,10 @@ public class Pokemon implements Serializable {
 
     public int getSpe() {
         return spe;
+    }
+
+    public int getIdPoke() {
+        return idPoke;
     }
 
     public void setPv(int pv) {

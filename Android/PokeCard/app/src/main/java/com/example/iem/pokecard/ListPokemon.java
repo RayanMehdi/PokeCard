@@ -29,7 +29,6 @@ public class ListPokemon extends AppCompatActivity {
 
         adapter = new MyAdapter(ListPokemon.this, PokeList);
         PokemonList.setAdapter(adapter);
-        //TextView tvTest = (TextView)findViewById(R.id.textView2);
 
         Async recupPoke = new Async();
         recupPoke.execute(PokeList, adapter);

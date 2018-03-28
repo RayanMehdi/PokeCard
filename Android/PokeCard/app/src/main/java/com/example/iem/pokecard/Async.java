@@ -7,6 +7,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.iem.pokecard.Model.Pokemon;
+import com.example.iem.pokecard.Model.PokemonListJson;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -36,20 +37,20 @@ public class Async extends AsyncTask<Object, Void, String> {
         adapter = (MyAdapter)params[1];
 
 
-        try {
+        /*try {
             RecupPokemon = this.GET();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
         list.addAll(toArray(list));
-        return RecupPokemon;
+        return PokemonListJson.json;
     }
 
 
 
 
-    protected String GET() throws IOException {
+    /*protected String GET() throws IOException {
         String str="";
         String urlLink ="http://pokecardapi.local/index.php/pokemon/list";
         try {
@@ -75,7 +76,7 @@ public class Async extends AsyncTask<Object, Void, String> {
             str = e.getMessage();
         }
         return  str;
-    }
+    }*/
 
 
     @Override
@@ -85,7 +86,7 @@ public class Async extends AsyncTask<Object, Void, String> {
     protected ArrayList<Pokemon> toArray(ArrayList<Pokemon> pkm){
         Type listType = new TypeToken<Collection<Pokemon>>(){}.getType();
 
-        return new Gson().fromJson(RecupPokemon, listType);
+        return new Gson().fromJson(PokemonListJson.json, listType);
 
     }
 }
