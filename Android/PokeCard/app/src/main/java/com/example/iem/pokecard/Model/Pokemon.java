@@ -2,6 +2,8 @@ package com.example.iem.pokecard.Model;
 
 import android.media.Image;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -14,8 +16,10 @@ public class Pokemon implements Serializable {
 
     //Attributes
 
+
     String icon;
     String name;
+
     int pv, att, def, spA, spD, spe;
 
     public String getIcon() {
