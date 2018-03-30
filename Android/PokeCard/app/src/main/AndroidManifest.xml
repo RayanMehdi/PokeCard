@@ -42,7 +42,7 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListPokemon" />
+        <activity android:name=".ListPokemonFragment" />
         <activity android:name=".DetailPokemon" />
         <activity android:name=".UserProfil" />
         <activity android:name=".LoginActivity" />

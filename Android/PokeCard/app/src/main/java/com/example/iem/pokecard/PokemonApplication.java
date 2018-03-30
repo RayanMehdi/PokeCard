@@ -26,7 +26,7 @@ public class PokemonApplication extends Application {
             super.onCreate();
             Retrofit.Builder mBuilder =
                     new Retrofit.Builder()
-                            .baseUrl("http://pokecardapi.local/index.php/pokemon/")
+                            .baseUrl("http://192.168.43.241:3000/")
                             .addConverterFactory(GsonConverterFactory.create());
 
             OkHttpClient.Builder okBuilder = new OkHttpClient.Builder();

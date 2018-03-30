@@ -56,7 +56,7 @@ public class Async extends AsyncTask<Object, Void, String> {
 
     protected String GET() throws IOException {
         String str="";
-        String urlLink ="http://pokecardapi.local/index.php/pokemon/list";
+        String urlLink ="192.168.43.241:3000/list";
         try {
             url = new URL(urlLink);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();

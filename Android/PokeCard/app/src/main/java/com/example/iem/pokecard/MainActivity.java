@@ -1,9 +1,8 @@
 package com.example.iem.pokecard;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         buttonList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ListPokemon.class);
+                Intent intent = new Intent(MainActivity.this,ListPokemonFragment.class);
                 startActivity(intent);
             }
         });
@@ -100,8 +99,24 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_account) {
-            // Handle the camera action
+        switch (item.getItemId()) {
+            case R.id.nav_account:
+                //ACCUEIL CONTENT
+                showFragment(new ItemAccueilFragment());
+                return true;
+            case R.id.nav_poke_list:
+                //LIST CONTENT
+                showFragment(new PokemonListFragment());
+                return true;
+
+
+        }
+
+
+
+
+        /*if (id == R.id.nav_account) {
+            showFragment(new PokemonListFragment());
         } else if (id == R.id.nav_poke_list) {
 
         } else if (id == R.id.nav_import_export) {
@@ -112,13 +127,18 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return false;
     }
 
-
+    private void showFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_main, fragment)
+                .commit();
+    }
 
 }
