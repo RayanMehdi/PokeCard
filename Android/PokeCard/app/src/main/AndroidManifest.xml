@@ -44,7 +44,14 @@
         </activity>
         <activity android:name=".Activity.DetailPokemon" />
         <activity android:name=".Activity.UserProfil" />
-        <activity android:name=".Activity.LoginActivity" />
+        <activity
+            android:name=".Activity.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            </activity>
         <activity
             android:name=".Activity.SettingsActivity"
             android:label="@string/title_activity_settings" />
@@ -64,11 +71,7 @@
             android:name=".Activity.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

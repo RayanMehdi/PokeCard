@@ -5,9 +5,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_account"
-            android:icon="@drawable/ic_account_circle_black_24dp"
-            android:title="Account" />
+            android:id="@+id/nav_all_pokemon"
+            android:icon="@drawable/ic_format_list_numbered_black_24dp"
+            android:title="All pokemon" />
         <item
             android:id="@+id/nav_poke_list"
             android:icon="@drawable/ic_view_list_black_24dp"

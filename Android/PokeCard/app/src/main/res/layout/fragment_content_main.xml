@@ -9,25 +9,9 @@
     tools:showIn="@layout/app_bar_main"
     android:id="@+id/content_main">
 
-    <Button
-        android:id="@+id/buttonListPokemon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="127dp"
-        android:text="Liste Pokemon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Login screen"
-        app:layout_constraintBottom_toTopOf="@+id/buttonListPokemon"
-        app:layout_constraintStart_toStartOf="@+id/buttonListPokemon" />
+
 
 
 </android.support.constraint.ConstraintLayout>

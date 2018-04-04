@@ -1,4 +1,4 @@
-package com.example.iem.pokecard.Fragment;
+package com.example.iem.pokecard.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,7 +44,6 @@ public class PokemonListFragment extends Fragment {
 
         adapter = new MyAdapter(getActivity(), PokeList);
         PokemonList.setAdapter(adapter);
-
 
         Manager_WS.getInstance().getList(PokeList, adapter);
 

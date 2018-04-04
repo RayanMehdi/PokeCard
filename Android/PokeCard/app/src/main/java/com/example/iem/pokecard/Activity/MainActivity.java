@@ -1,10 +1,8 @@
 package com.example.iem.pokecard.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,11 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 
-import com.example.iem.pokecard.Fragment.ItemAccueilFragment;
-import com.example.iem.pokecard.Fragment.PokemonListFragment;
+import com.example.iem.pokecard.Fragments.ItemAccueilFragment;
+import com.example.iem.pokecard.Fragments.PokemonListFragment;
 import com.example.iem.pokecard.R;
+import com.example.iem.pokecard.Fragments.MyListFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,12 +40,13 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        Button buttonList = (Button) findViewById(R.id.buttonListPokemon);
-        Button buttonLogin = (Button) findViewById(R.id.buttonLogin);
+        //Button buttonList = (Button) findViewById(R.id.buttonListPokemon);
+        //Button buttonLogin = (Button) findViewById(R.id.buttonLogin);
+
+        showFragment(new PokemonListFragment());
 
 
-
-      /*  buttonList.setOnClickListener(new View.OnClickListener() {
+        /*buttonList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,PokemonListFragment.class);
@@ -55,13 +54,15 @@ public class MainActivity extends AppCompatActivity
             }
         });*/
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
+
+
+        /*buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
 
@@ -104,34 +105,18 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (item.getItemId()) {
-            case R.id.nav_account:
-                //ACCUEIL CONTENT
-                showFragment(new ItemAccueilFragment());
+            //showFragment(new ItemAccueilFragment());
+            case R.id.nav_all_pokemon:
+                //ALL POKEMON CONTENT
+                showFragment(new PokemonListFragment());
                 return true;
             case R.id.nav_poke_list:
                 //LIST CONTENT
-                showFragment(new PokemonListFragment());
+                showFragment(new MyListFragment());
                 return true;
 
 
         }
-
-
-
-
-        /*if (id == R.id.nav_account) {
-            showFragment(new PokemonListFragment());
-        } else if (id == R.id.nav_poke_list) {
-
-        } else if (id == R.id.nav_import_export) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -1,4 +1,4 @@
-package com.example.iem.pokecard.Fragment;
+package com.example.iem.pokecard.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

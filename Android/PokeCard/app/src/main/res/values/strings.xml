@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PokeCard</string>
-    <string name="facebook_app_id">316641108811414</string>
-    <string name="fb_login_protocol_scheme">fb316641108811414</string>
+    <string name="facebook_app_id">357603681392256</string>
+    <string name="fb_login_protocol_scheme">fb357603681392256</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->
