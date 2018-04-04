@@ -1,4 +1,4 @@
-package com.example.iem.pokecard;
+package com.example.iem.pokecard.Activity;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

@@ -1,9 +1,10 @@
-package com.example.iem.pokecard;
+package com.example.iem.pokecard.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.iem.pokecard.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;

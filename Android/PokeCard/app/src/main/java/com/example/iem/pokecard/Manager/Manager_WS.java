@@ -1,15 +1,13 @@
 package com.example.iem.pokecard.Manager;
 
 import android.util.Log;
-import android.widget.Adapter;
 
+import com.example.iem.pokecard.Activity.DetailPokemon;
 import com.example.iem.pokecard.Model.Pokemon;
-import com.example.iem.pokecard.Model.PokemonResponse;
 import com.example.iem.pokecard.MyAdapter;
 import com.example.iem.pokecard.PokemonApplication;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,18 +19,14 @@ import retrofit2.Response;
 
 public class Manager_WS {
 
+    private static final Manager_WS ourInstance = new Manager_WS();
 
-    ArrayList<Pokemon> myList;
-    MyAdapter adapter;
-
-
-    public Manager_WS(ArrayList<Pokemon> myList, MyAdapter adapter) {
-        this.myList = myList;
-        this.adapter = adapter;
-
+    public static Manager_WS getInstance() {
+        return ourInstance;
     }
 
-    public void getList()
+
+    public void getList(final ArrayList<Pokemon> myList, final MyAdapter adapter)
     {
         Call<ArrayList<Pokemon>> call = PokemonApplication.getServicePokemon().getAll();
         call.enqueue(new Callback<ArrayList<Pokemon>>() {
@@ -50,21 +44,31 @@ public class Manager_WS {
         });
     }
 
-    /*public void getPokemons()
+
+    public void getPokemon(int pokemonId, final IGetPokemon listener)
     {
-        Call<PokemonResponse> call = PokemonApplication.getServicePokemon().getPokemons();
-        call.enqueue(new Callback<PokemonResponse>() {
+        Call<Pokemon> call = PokemonApplication.getServicePokemon().getPokemon(pokemonId);
+        call.enqueue(new Callback<Pokemon>() {
             @Override
-            public void onResponse(Call<PokemonResponse> call, Response<PokemonResponse> response) {
-                pokemonResponse.setPokemons(response.body().getPokemons());
-                pokemonResponse.setNext(response.body().getNext());
-                pokemonResponse.setPrevious(response.body().getPrevious());
+            public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
+                if(response.isSuccessful()) {
+                    listener.success(response.body());
+                } else {
+                    listener.error();
+                }
+                //detailPokemon.setPokemon(response.body());
             }
 
             @Override
-            public void onFailure(Call<PokemonResponse> call, Throwable t) {
-                Log.e("test", "error");
+            public void onFailure(Call<Pokemon> call, Throwable t) {
+                Log.e("test", "error " + t.getMessage());
+                listener.error();
             }
         });
-    }*/
+    }
+
+    public interface IGetPokemon {
+        void success(Pokemon p);
+        void error();
+    }
 }

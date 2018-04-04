@@ -23,7 +23,7 @@ public class MyAdapter extends ArrayAdapter<Pokemon> {
 
 
 
-    //tweets est la liste des models à afficher
+
     public MyAdapter(Context context, ArrayList<Pokemon> pokemons) {
         super(context, 0, pokemons);
     }

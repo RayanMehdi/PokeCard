@@ -9,10 +9,13 @@ import java.util.ArrayList;
 public class User {
 
 
-    int id;
-    String nom, prenom, mail;
-    String idFacebook;
-    ArrayList<Pokemon> pokemonList;
-    ArrayList<Pokemon> myTeam;
+    private static final User instance = new User();
+
+    public static User getInstance() {
+        return instance;
+    }
+
+
+    String tokenFB, firstName, lastName;
 
 }

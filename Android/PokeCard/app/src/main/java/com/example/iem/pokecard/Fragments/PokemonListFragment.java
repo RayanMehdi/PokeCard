@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.iem.pokecard.DetailPokemon;
+import com.example.iem.pokecard.Activity.DetailPokemon;
 import com.example.iem.pokecard.Manager.Manager_WS;
 import com.example.iem.pokecard.Model.Pokemon;
 import com.example.iem.pokecard.MyAdapter;
@@ -45,8 +45,7 @@ public class PokemonListFragment extends Fragment {
         adapter = new MyAdapter(getActivity(), PokeList);
         PokemonList.setAdapter(adapter);
 
-        Manager_WS ws = new Manager_WS(PokeList, adapter);
-        ws.getList();
+        Manager_WS.getInstance().getList(PokeList, adapter);
 
         PokemonList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

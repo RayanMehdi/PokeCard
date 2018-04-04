@@ -1,4 +1,4 @@
-package com.example.iem.pokecard;
+package com.example.iem.pokecard.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.iem.pokecard.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
