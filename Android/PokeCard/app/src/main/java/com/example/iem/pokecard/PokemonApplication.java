@@ -2,6 +2,7 @@ package com.example.iem.pokecard;
 
 import android.app.Application;
 
+import com.example.iem.pokecard.Model.User;
 import com.example.iem.pokecard.Service.ServicePokemon;
 
 import java.util.concurrent.TimeUnit;
@@ -20,8 +21,17 @@ public class PokemonApplication extends Application {
 
 
         private  static ServicePokemon pokemonService;
+        private  static User user;
 
-        @Override
+    public static void setUser(User user) {
+        PokemonApplication.user = user;
+    }
+
+    public static User getUser() {
+        return user;
+    }
+
+    @Override
         public void onCreate() {
             super.onCreate();
             Retrofit.Builder mBuilder =

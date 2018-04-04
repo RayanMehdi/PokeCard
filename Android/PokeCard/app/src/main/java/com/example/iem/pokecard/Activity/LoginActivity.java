@@ -3,8 +3,12 @@ package com.example.iem.pokecard.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.example.iem.pokecard.Manager.Manager_WS;
+import com.example.iem.pokecard.PokemonApplication;
 import com.example.iem.pokecard.R;
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -15,6 +19,7 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
@@ -33,7 +38,21 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                getUserDetails(loginResult);
+                GraphRequest grequest = GraphRequest.newMeRequest(loginResult.getAccessToken(),
+                        new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
+
+                                try {
+                                    Log.d("POST",object.get("name").toString() + " " + AccessToken.getCurrentAccessToken().getUserId() );
+                                    Manager_WS.getInstance().login(AccessToken.getCurrentAccessToken().getUserId(),object.get("name").toString(),object.get("name").toString());
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        });
             }
 
             @Override

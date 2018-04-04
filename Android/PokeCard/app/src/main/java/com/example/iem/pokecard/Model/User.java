@@ -8,14 +8,23 @@ import java.util.ArrayList;
 
 public class User {
 
-
-    private static final User instance = new User();
-
-    public static User getInstance() {
-        return instance;
-    }
-
-
     String tokenFB, firstName, lastName;
 
+    public User(String tokenFB, String firstName, String lastName) {
+        this.tokenFB = tokenFB;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public String getTokenFB() {
+        return tokenFB;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 }
