@@ -3,7 +3,9 @@ package com.example.iem.pokecard.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,8 @@ import com.squareup.picasso.Picasso;
 public class DetailPokemon extends AppCompatActivity implements Manager_WS.IGetPokemon{
 
      Pokemon pokemon;
+    private ProgressBar spinner;
+
 
     public Pokemon getPokemon() {
         return pokemon;
@@ -29,10 +33,11 @@ public class DetailPokemon extends AppCompatActivity implements Manager_WS.IGetP
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_pokemon);
         Intent intent = getIntent();
-
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
         Pokemon pok = (Pokemon)intent.getSerializableExtra("Pokemon");
 
         //loading
+        spinner.setVisibility(View.VISIBLE);
         Manager_WS.getInstance().getPokemon(pok.getIdPoke(), this);
 
 
@@ -45,6 +50,7 @@ public class DetailPokemon extends AppCompatActivity implements Manager_WS.IGetP
     @Override
     public void success(Pokemon p) {
         //dismiss loading
+        spinner.setVisibility(View.GONE);
         pokemon = p;
         ImageView viewPokemon = (ImageView)findViewById(R.id.imageViewPokemon);
         TextView tvNom = (TextView)findViewById(R.id.textViewNom);
@@ -68,6 +74,7 @@ public class DetailPokemon extends AppCompatActivity implements Manager_WS.IGetP
     @Override
     public void error() {
         //dismiss loading
+        spinner.setVisibility(View.GONE);
         Toast.makeText(this, "toto", Toast.LENGTH_SHORT).show();
     }
 }

@@ -20,9 +20,15 @@ import retrofit2.Response;
 
 public class Manager_WS {
 
-    private static final Manager_WS ourInstance = new Manager_WS();
+    private static Manager_WS ourInstance = null;
+
+    private Manager_WS() {
+    }
 
     public static Manager_WS getInstance() {
+        if(ourInstance == null) {
+            ourInstance = new Manager_WS();
+        }
         return ourInstance;
     }
 

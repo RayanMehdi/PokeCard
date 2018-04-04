@@ -45,7 +45,10 @@ public class MyListFragment extends Fragment {
         adapter = new MyAdapter(getActivity(), PokeList);
         PokemonList.setAdapter(adapter);
 
+        if(PokemonApplication.getUser() != null)
+
         Manager_WS.getInstance().usersPokemon(PokemonApplication.getUser().getTokenFB(),PokeList,adapter);
+
 
         PokemonList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
