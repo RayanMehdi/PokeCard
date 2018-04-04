@@ -42,8 +42,10 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.DetailPokemon" />
-        <activity android:name=".Activity.UserProfil" />
+        <activity android:name=".Activity.DetailPokemon"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activity.UserProfil"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity.LoginActivity" >
             <intent-filter>
@@ -54,7 +56,8 @@
             </activity>
         <activity
             android:name=".Activity.SettingsActivity"
-            android:label="@string/title_activity_settings" />
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -70,7 +73,8 @@
         <activity
             android:name=".Activity.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
 
         </activity>
     </application>
