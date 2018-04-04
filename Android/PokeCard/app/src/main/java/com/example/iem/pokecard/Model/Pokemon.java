@@ -17,6 +17,31 @@ public class Pokemon implements Serializable {
     //Attributes
 
 
+    public Pokemon(String icon, String name, int pv, int att, int def, int spA, int spD, int spe, int idPoke) {
+        this.icon = icon;
+        this.name = name;
+        this.pv = pv;
+        this.att = att;
+        this.def = def;
+        this.spA = spA;
+        this.spD = spD;
+        this.spe = spe;
+        this.idPoke = idPoke;
+    }
+
+    public  Pokemon(Pokemon pokemon){
+        this.icon = pokemon.getIcon();
+        this.name = pokemon.getName();
+        this.pv = pokemon.getPv();
+        this.att = pokemon.getAtt();
+        this.def = pokemon.getDef();
+        this.spA = pokemon.getSpA();
+        this.spD = pokemon.getSpD();
+        this.spe = pokemon.getSpe();
+        this.idPoke = pokemon.getIdPoke();
+
+    }
+
     String icon;
     String name;
 
@@ -56,9 +81,11 @@ public class Pokemon implements Serializable {
         return spe;
     }
 
+
     public int getIdPoke() {
         return idPoke;
     }
+
 
     public void setPv(int pv) {
         this.pv = pv;
@@ -82,5 +109,17 @@ public class Pokemon implements Serializable {
 
     public void setSpe(int spe) {
         this.spe = spe;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setIdPoke(int idPoke) {
+        this.idPoke = idPoke;
     }
 }

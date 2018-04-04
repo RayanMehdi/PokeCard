@@ -42,12 +42,11 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListPokemonFragment" />
-        <activity android:name=".DetailPokemon" />
-        <activity android:name=".UserProfil" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".Activity.DetailPokemon" />
+        <activity android:name=".Activity.UserProfil" />
+        <activity android:name=".Activity.LoginActivity" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Activity.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -62,10 +61,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.example.iem.pokecard;
+package com.example.iem.pokecard.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import com.example.iem.pokecard.Fragment.ItemAccueilFragment;
+import com.example.iem.pokecard.Fragment.PokemonListFragment;
+import com.example.iem.pokecard.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,13 +47,13 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        buttonList.setOnClickListener(new View.OnClickListener() {
+      /*  buttonList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ListPokemonFragment.class);
+                Intent intent = new Intent(MainActivity.this,PokemonListFragment.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
