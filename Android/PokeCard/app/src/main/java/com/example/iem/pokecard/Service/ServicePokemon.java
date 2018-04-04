@@ -1,7 +1,6 @@
 package com.example.iem.pokecard.Service;
 
 import com.example.iem.pokecard.Model.Pokemon;
-import com.example.iem.pokecard.Model.PokemonResponse;
 import com.example.iem.pokecard.Model.User;
 
 import java.util.ArrayList;

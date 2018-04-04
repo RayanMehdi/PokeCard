@@ -38,21 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                GraphRequest grequest = GraphRequest.newMeRequest(loginResult.getAccessToken(),
-                        new GraphRequest.GraphJSONObjectCallback() {
-                            @Override
-                            public void onCompleted(JSONObject object, GraphResponse response) {
-
-                                try {
-                                    Log.d("POST",object.get("name").toString() + " " + AccessToken.getCurrentAccessToken().getUserId() );
-                                    Manager_WS.getInstance().login(AccessToken.getCurrentAccessToken().getUserId(),object.get("name").toString(),object.get("name").toString());
-
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-                        });
+                getUserDetails(loginResult);
             }
 
             @Override
@@ -82,7 +68,12 @@ public class LoginActivity extends AppCompatActivity {
                     public void onCompleted(
                             JSONObject json_object,
                             GraphResponse response) {
-                        // Refaire la redirection pour la home page de l’appli
+                        try {
+                            Manager_WS.getInstance().login(AccessToken.getCurrentAccessToken().getUserId(),json_object.get("name").toString(), json_object.get("name").toString());// Refaire la redirection pour la home page de l’appli
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         intent.putExtra("userProfile", json_object.toString());
                         startActivity(intent);
