@@ -1,4 +1,4 @@
-package com.example.iem.pokecard;
+package com.example.iem.pokecard.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.iem.pokecard.DetailPokemon;
 import com.example.iem.pokecard.Manager.Manager_WS;
 import com.example.iem.pokecard.Model.Pokemon;
+import com.example.iem.pokecard.MyAdapter;
+import com.example.iem.pokecard.R;
 
 import java.util.ArrayList;
 

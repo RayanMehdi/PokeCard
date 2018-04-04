@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject json_object,
                             GraphResponse response) {
                         // Refaire la redirection pour la home page de l’appli
-                        Intent intent = new Intent(LoginActivity.this, UserProfil.class);
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         intent.putExtra("userProfile", json_object.toString());
                         startActivity(intent);
                     }
